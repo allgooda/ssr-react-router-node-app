@@ -1,0 +1,7 @@
+## .babel rc 
+
+{
+  "presets": [
+    "env", "react"
+  ]
+}
