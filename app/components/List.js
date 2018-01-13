@@ -14,7 +14,6 @@ function List(props) {
               return <li key={pokemon.name}>{pokemon.name}</li>
           })}
         </ul>
+      </div>
     )
 }
-
-export default List;

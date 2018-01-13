@@ -1,13 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import {BrowseRouter as Router} from 'react-router-dom';
-import App from './components/App';
+import { render } from 'react-dom';
+import {BrowserRouter as Router } from 'react-router-dom';
 
-const render = ReactDOM.render;
+import App from './components/App';
 
 render((
     <Router>
-      <App pokemon={window.__PRELOADED_STATE__}/>
+        <App pokemon={window.__PRELOADED_STATE__}/>
     </Router>),
     document.getElementById('root')
-  );
+);
