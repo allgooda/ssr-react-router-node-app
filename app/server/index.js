@@ -3,8 +3,8 @@ import mongoose from 'mongoose'
 
 const port = process.env.PORT || 8080;
 const dbUri = 'mongodb://localhost/furniture';
-mongoose.connect(dbUri);
 
+mongoose.connect(dbUri);
 mongoose.connection
   .once('open', () => console.log('DB CONNECTED'))
   .on('error', (error) => {

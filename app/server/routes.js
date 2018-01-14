@@ -1,7 +1,8 @@
 const routes = [
   '/',
   '/pokemon',
-  '/pokemon/ability/:ability'
+  '/pokemon/ability/:ability',
+  '/product/create'
 ];
 
 export default routes;
