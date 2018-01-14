@@ -11,16 +11,15 @@ import List from './List'
 import Home from './Home'
 
 export default function App(props) {
-  console.log(props);
-  const { pokemon } = props;
+  const products  = props.products;
 
   return (
     <div>
       Your React Node app is set up!
       <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/pokemon" exact render={() => (<Redirect to="/pokemon/ability/telepathy" />)} />
-        <Route path="/pokemon/ability/:ability" render={(location) => (<List pokemon={pokemon.list} location={location} /> )} />
+        // <Route path="/" exact component={Home} />
+        // <Route path="/pokemon" exact render={() => (<Redirect to="/pokemon/ability/telepathy" />)} />
+        <Route path="/products" render={(location) => (<List products={products}  location={location} /> )} />
       </Switch>
     </div>
   )

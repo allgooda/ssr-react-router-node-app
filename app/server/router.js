@@ -17,10 +17,22 @@ export default function router(req, res) {
     return;
   }
 
-  return Products.create( { name: 'Couch', description: 'Comfy', type: 'furniture', price: 3000 })
+  return Products.index({})
     .then(resp => {
-      console.log('WHAT?')
-      console.log(resp);
+      const products = { resp }
+
+      const context = {}
+
+      console.log('HAHAHAH11111');
+      const html = renderToString(
+        <StaticRouter context={context} location={req.url} >
+          <App products={products} />
+        </StaticRouter>
+      )
+
+
+      // res.status(200).send(renderFullPage(html, products));
+
     })
     .catch(err => res.status(404).send(`${err}: Oh no! cannot find`));
 
@@ -31,9 +43,9 @@ export default function router(req, res) {
   //     const context = {}
 
   //     const html = renderToString(
-  //       <StaticRouter context={context} location={req.url} >
-  //         <App pokemon={pokemon} />
-  //       </StaticRouter>
+         // <StaticRouter context={context} location={req.url} >
+         //   <App pokemon={pokemon} />
+         // </StaticRouter>
   //     )
 
   //     res.status(200).send(renderFullPage(html, pokemon));
