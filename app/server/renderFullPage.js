@@ -1,4 +1,5 @@
 export default function renderFullPage(html, preloadedState) {
+  console.log(preloadedState);
   return `
     <!doctype html>
     <html>

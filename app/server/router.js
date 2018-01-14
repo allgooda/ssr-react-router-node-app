@@ -10,7 +10,7 @@ import App from '../components/App';
 export default function router(req, res) {
 
   const match = routes.reduce((acc, route) => matchPath(req.url, { path: route, exact: true }) || acc, null);
-
+  console.log(match);
   if(!match) {
     res.status(404).send('page not found');
     return;

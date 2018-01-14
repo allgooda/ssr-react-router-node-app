@@ -11,7 +11,7 @@ import List from './List'
 import Home from './Home'
 
 export default function App(props) {
-
+  console.log(props);
   const { pokemon } = props;
 
   return (
