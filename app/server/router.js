@@ -23,7 +23,6 @@ export default function router(req, res) {
 
       const context = {}
 
-      console.log('HAHAHAH11111');
       const html = renderToString(
         <StaticRouter context={context} location={req.url} >
           <App products={products} />
@@ -31,25 +30,9 @@ export default function router(req, res) {
       )
 
 
-      // res.status(200).send(renderFullPage(html, products));
+      res.status(200).send(renderFullPage(html, products));
 
     })
     .catch(err => res.status(404).send(`${err}: Oh no! cannot find`));
 
-  // return getPokemon.withAbility('telepathy')
-  //   .then(resp => {
-  //     const pokemon = { list: resp.data.pokemon };
-
-  //     const context = {}
-
-  //     const html = renderToString(
-         // <StaticRouter context={context} location={req.url} >
-         //   <App pokemon={pokemon} />
-         // </StaticRouter>
-  //     )
-
-  //     res.status(200).send(renderFullPage(html, pokemon));
-
-  //   })
-  //   .catch(err => res.status(404).send(`${err}: Oh no! cannot find`));
 }

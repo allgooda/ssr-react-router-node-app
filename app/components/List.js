@@ -1,26 +1,19 @@
 import React from 'react';
 
 function List(props) {
-    console.log('HAHAHAAHAHAH')
-
-    const { products, location } = props
-
-    const { ability } = location.match.params;
-
+    const { products } = props;
+    console.log('CHECKINGNNGNG')
+    console.log({products});
     return (
       <div>
-        <h3>{ability}</h3>
         <div>
         { products.resp.map(prod => {
-            console.log(prod)
             const product = prod;
-            console.log(product)
-            return <div key={product._id}>{product.name}</div>
+            return <div key={product._id}>{product.price}</div>
         })}
         </div>
       </div>
     )
 }
-
 
 export default List;
